@@ -1,0 +1,33 @@
+<div *ngIf="std is undefined; else noStd">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2> {{ std.id }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h2> {{ std.name }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h2> {{ std.birth }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="btn-group" appDropdown>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                  Manage
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" (click)="onEdit()">Edit Recipe</a></li>
+                  <li><a class="dropdown-item" (click)="onDelete()">Delete Recipe</a></li>
+                </ul>
+              </div>
+        </div>
+    </div>
+</div>
+<ng-template #noStd>
+    <h3>Please select a student</h3>
+</ng-template>
